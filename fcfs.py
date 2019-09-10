@@ -2,6 +2,7 @@ from tabulate import tabulate
 from random import randint
 import multiprocessing
 import os
+from Processo import Processo
 
 def extrai_info_processo(processo) :
 
@@ -26,25 +27,9 @@ def cria_processos() :
 #processos = cria_processos()
 #p.start()
 
-processo1 = { 
-    "numero"       : randint(0,9),
-    "burst_time"   : randint(0,9),
-    "hora_chegada" : randint(0,9)
-}
-
-processo2 = { 
-    "numero"       : randint(0,9),
-    "burst_time"   : randint(0,9),
-    "hora_chegada" : randint(0,9)
-}
-
-processo3 = { 
-    "numero"       : randint(0,9),
-    "burst_time"   : randint(0,9),
-    "hora_chegada" : randint(0,9)
-}
-
-fila = [processo1, processo2, processo3]
+processo = Processo()
+fila = processo.get_lista_processos()
+#fila = [processo1, processo2, processo3]
 
 fila_de_prontos = []; 
 numero_bursts   = 3;
