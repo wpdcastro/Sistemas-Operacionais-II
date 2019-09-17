@@ -14,6 +14,12 @@ William Castro   - 571644
 
 01/10
 
+### round robin
+# para cada processo é atribuido um quantum identico ao final da execução
+# escalonador mantem processos prontos
+# quando o quantum do processo se esgota ele é alocado no final da fila e assim sucessivamente
+	- problema é a determinação do quantum
+	[se e pequeno precisa de muitas trocas - sem eficiencia | se é grande o tempo de resposta nao é aceitavel, deixa muito tempo ocioso]
 
 ### Escalonador de Prioridade
 # quando algo é mais importante do que outra coisa
