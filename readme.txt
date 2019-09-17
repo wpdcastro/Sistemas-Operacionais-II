@@ -1,12 +1,16 @@
+Bárbara Caroline - 567620
+Bruno Costa      - 568805 
 William Castro   - 571644
-Bruno Costa      - 57 
-Bárbara Caroline - 57
 
-FCFS - ok 
-SJF  - 
-SJF (preemptivo) - 
-RoundRobin  - 
-Prioridades
++-----------------+-----------------------+----------+
+|Processo         | Arquivo               | Status   |
++-----------------+-----------------------+----------+
+|FCFS             | job_mais_curto        | OK       |
+|SJF              | menor_trabalho_frente | OK       |
+|SJF (preemptivo) |                       | -        |
+|RoundRobin       |                       | -        |
+|Prioridades      |                       | -        |
++-----------------+-----------------------+----------+
 
 01/10
 
