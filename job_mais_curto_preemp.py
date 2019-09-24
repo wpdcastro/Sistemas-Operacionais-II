@@ -38,3 +38,24 @@ print(tabulate(resultados,tabela,tablefmt="grid"))
 
 print("Tempo Medio: ", round(soma_burst / numero_bursts, 2))
 print("Tempo Que demorou para o processo ser escolhido: ")
+
+print(resultados)
+
+while (len(resultados) > 0) :
+    cont = 0
+    for processo in resultados : 
+        quantum = 5
+
+        quanta = processo[1] - quantum
+
+        if (quanta <= 0) :
+            processo[1] = quanta
+            resultados.pop(cont)
+            print("BURST CONCLUÍDO : PROCESSO ", processo[0])
+            print(resultados)
+
+        else :
+            processo[1] = quanta
+            print("PROCESSO ", processo[0] , "FALTA ", processo[1])
+            print("Conador ", cont)
+            cont = cont + 1
