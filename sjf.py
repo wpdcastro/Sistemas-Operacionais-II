@@ -2,49 +2,13 @@ from tabulate import tabulate
 from random import randint
 import multiprocessing
 import os
+from Processo import Processo 
 
-def extrai_info_processo(processo) :
 
-    rg = { 
-       "numero"       : os.getegid(),
-       "burst_time"   : 27,
-       "hora_chegada" : 1
-      }
-
-    return rg
-
-def cria_processos() :
-
-    processos = []
-
-    for i in range(3):
-        novo_processo = multiprocessing.Process(target=extrai_info_processo)
-        processos.append(novo_processo)
-
-    return processos
-
-#processos = cria_processos()
+processo = Processo()
 #p.start()
 
-processo1 = { 
-    "numero"       : randint(0,9),
-    "burst_time"   : randint(0,9),
-    "hora_chegada" : randint(0,9)
-}
-
-processo2 = { 
-    "numero"       : randint(0,9),
-    "burst_time"   : randint(0,9),
-    "hora_chegada" : randint(0,9)
-}
-
-processo3 = { 
-    "numero"       : randint(0,9),
-    "burst_time"   : randint(0,9),
-    "hora_chegada" : randint(0,9)
-}
-
-fila = [processo1, processo2, processo3]
+fila = processo.get_lista_processos()
 
 fila_de_prontos = []; 
 
