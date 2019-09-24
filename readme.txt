@@ -1,3 +1,9 @@
+--------------------------------------------
+para instalar: 
+	from tabulate import tabulate --> instale o tabulate <sudo apt-get install tabulate>
+	em escalonador_prioridade.py, altere para o método que quer usar
+	rode escalonador_prioridade.py
+
 Bárbara Caroline - 567620
 Bruno Costa      - 568805 
 William Castro   - 571644
