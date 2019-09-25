@@ -87,3 +87,45 @@ class Escalonador :
                     processo[1] = quanta
                     print("EXECUTANDO ==> PROCESSO ", processo[0] , "| BURST TIME RESTANTE ", processo[1])
                     cont = cont + 1
+
+
+    def round_robin(self, processos) :
+
+        fila_job = self.short_job_first(processos)
+
+        resultados = []
+
+        for job in fila_job :
+            resultados.append([job["numero"], job["burst_time"], job["hora_chegada"], job["prioridade"]])
+
+        tabela = ["processo", "burst_time", "hora_chegada", "prioridade"]
+
+        print(tabulate(resultados,tabela,tablefmt="grid"))
+
+        quantum = 5
+        soma_quanta = 0
+
+        while (len(resultados) > 0) :
+            cont = 0
+
+            for processo in resultados : 
+                print("QUANTUM : ", quantum)
+                soma_quanta = processo[1] + soma_quanta
+
+                quanta = processo[1] - quantum
+
+                if (quanta <= 0) :
+                    processo[1] = quanta
+                    resultados.pop(cont)
+                    print("BURST TIME DO PROCESSO ", processo[0], "CONCLUÍDO")
+
+                else :
+                    processo[1] = quanta
+                    print("EXECUTANDO ==> PROCESSO ", processo[0] , "| BURST TIME RESTANTE ", processo[1])
+                    cont = cont + 1
+
+    
+            if (len(resultados) > 0) :
+                quantum = soma_quanta / len(resultados)
+                soma_quanta = 0
+

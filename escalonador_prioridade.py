@@ -12,12 +12,14 @@ processos = escalonador.short_job_first(fila)
 #processos = escalonador.short_job_first_preem(fila)
 #processos = escalonador.first_come_first_served(fila)
 
-to_print = []
-for processo in processos :
- to_print.append([processo["numero"], processo["burst_time"], processo["hora_chegada"], processo["prioridade"]])
+#to_print = []
+#for processo in processos :
+# to_print.append([processo["numero"], processo["burst_time"], processo["hora_chegada"], processo["prioridade"]])
 
-tabela = ["processo", "burst_time", "hora_chegada", "prioridade"]
-print(tabulate(to_print,tabela,tablefmt="grid"))
+#tabela = ["processo", "burst_time", "hora_chegada", "prioridade"]
+#print(tabulate(to_print,tabela,tablefmt="grid"))
+
+processos = escalonador.round_robin(fila)
 
 #tabela = ["processo", "burst_time", "hora_chegada", "prioridade"]
 
