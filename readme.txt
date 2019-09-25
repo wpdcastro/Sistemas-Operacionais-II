@@ -1,18 +1,24 @@
+--------------------------------------------
+para instalar: 
+	from tabulate import tabulate --> instale o tabulate <sudo apt-get install tabulate>
+	em escalonador_prioridade.py, altere para o método que quer usar
+	rode escalonador_prioridade.py
+
 Bárbara Caroline - 567620
 Bruno Costa      - 568805 
 William Castro   - 571644
 
 teste
 
-+-----------------+-----------------------+----------+
-|Processo         | Arquivo               | Status   |
-+-----------------+-----------------------+----------+
-|FCFS             | job_mais_curto        | OK       |
-|SJF              | menor_trabalho_frente | OK       |
-|SJF (preemptivo) |                       | -        |
-|RoundRobin       |                       | -        |
-|Prioridades      |                       | -        |
-+-----------------+-----------------------+----------+
++-----------------+-------------------------+----------+
+|Processo         | Arquivo                 | Status   |
++-----------------+-------------------------+----------+
+|FCFS             | first_come_first_served | OK       |
+|SJF              | job_mais_curto          | OK       |
+|SJF (preemptivo) | job_mais_curto_preemp   | OK?      |
+|RoundRobin       |                         | - BRUNO  |
+|Prioridades      |                         | -        |
++-----------------+-------------------------+----------+
 
 01/10
 
