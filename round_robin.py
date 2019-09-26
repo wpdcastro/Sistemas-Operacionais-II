@@ -1,6 +1,10 @@
 from tabulate import tabulate
 from Processo import Processo
 
+import multiprocessing
+import os
+
+
 processo = Processo()
 
 fila = processo.get_lista_processos()
@@ -23,19 +27,23 @@ while (len(resultados) > 0) :
         quantum = 5
 
         quanta = fila[cont]['burst_time'] - quantum
-        print('quanta', quanta)
+
+        print('Quanta que faltou/sobrou da execução do processo .:.', quanta)
+
 
         if (quanta <= 0) :
             fila[0]['burst_time'] = quanta
             resultados.pop(cont)
-            fila.pop(cont)
+
             print("BURST CONCLUÍDO : PROCESSO ", fila[0]['numero'])
+            fila.pop(cont)            
+
             print("Pendentes -> ", resultados)
 
         else :
             fila[cont]['burst_time'] = quanta
             cont = cont + 1
-            print("PROCESSO ", fila[0]['numero'] , "FALTA ", fila[0]['burst_time'])
-            print("PROCESSO ", fila[1]['numero'] , "FALTA ", fila[1]['burst_time'])
-            print("PROCESSO ", fila[2]['numero'] , "FALTA ", fila[2]['burst_time'])
+
             print("Contador ", cont)
+            for processo in fila :
+                print("PROCESSO ", processo['numero'],"FALTA ", processo['burst_time'])
